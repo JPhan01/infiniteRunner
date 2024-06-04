@@ -136,7 +136,6 @@ public class ship_controller : MonoBehaviour
         if (travelDistance > GameController.instance.distanceToLevel * GameController.instance.level)
         {
             GameController.instance.LevelUp();
-            accelFactor += 0.5f;
         }
     }
 //________________________________________________________

@@ -7,6 +7,6 @@ public class MaxSpeedCounter : MonoBehaviour
     void Start()
     {
         maxSpeedCounter = GetComponent<TMP_Text>();
-        maxSpeedCounter.text = ship_controller.maxSpeedCounter.ToString("F3") + "m/s";
+        maxSpeedCounter.text = ship_controller.maxSpeedCounter.ToString("F3") + " m/s";
     }
 }

@@ -1,25 +1,28 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
-    private bool ScoreValidated = false;
+    public static bool scoreValidated = false;
+    public UnityEvent validate;
+    public static string inputName;
     private void Start()
     {
-        ScoreValidated = false;
-        
-        var scores = DBManager.topScores(3);
-        foreach (var score in scores)
-        {
-
-        }
+        scoreValidated = false;
     }
-    public void Retry() => SceneManager.LoadScene("Game");
-    public void Menu() => SceneManager.LoadScene("Menu");
-    public void OnValidate()
+    public void Retry()  
+    { 
+        if (scoreValidated) SceneManager.LoadScene("Game"); 
+    }
+    public void Menu() 
+    { 
+        if (scoreValidated) SceneManager.LoadScene("Menu"); 
+    }
+    public void Validate()
     {
-        //DBManager.InsertNewScore(inputName, ship_controller.travelDistance);
-        ScoreValidated = true;
-        //UI_InputWindow.Hide();
+        validate.Invoke();
+        DBManager.InsertNewScore(inputName, (int)ship_controller.travelDistance);
+        scoreValidated = true;
     }
 }

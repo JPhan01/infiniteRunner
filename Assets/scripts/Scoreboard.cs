@@ -6,6 +6,9 @@ public class Scoreboard : MonoBehaviour
 {
     private void Start()
     {
-        //DBManager.scores
+        for (int i = 0; i < 10; i++) 
+        {
+            if (DBManager.scores[i] != null) Debug.Log(DBManager.scores[i]);
+        }
     }
 }

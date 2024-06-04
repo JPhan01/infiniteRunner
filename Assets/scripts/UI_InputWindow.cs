@@ -4,11 +4,20 @@ using UnityEngine.UI;
 
 public class UI_InputWindow : MonoBehaviour
 {
-    private TMP_InputField inputField;
+    public bool clearToValidate;
+
+    public void validate()
+    {
+        if (clearToValidate) Hide();
+    }
+
     public void Awake()
     {
-        inputField = GetComponent<TMP_InputField>();
         Show();
+    }
+    public void Start()
+    {
+        clearToValidate= false;
     }
     public void Show()
     {
@@ -17,5 +26,13 @@ public class UI_InputWindow : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+    public void RegisterName(string name)
+    {
+        if (name !=null) 
+        {
+            GameOverController.inputName = name;
+            clearToValidate = true;
+        }
     }
 }

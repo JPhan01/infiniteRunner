@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance { get; private set; }
+    public UnityEvent stormAdvancing;
 
     public float distance { get; private set; } = 0f;
     public int level { get; private set; } = 1;
@@ -22,7 +24,12 @@ public class GameController : MonoBehaviour
     {
         Reset();
     }
-    public void LevelUp() => level++;
+    public void LevelUp()
+    {
+        level++;
+        stormAdvancing.Invoke();
+    }
+
     public void SetDistance(float dist) => distance = dist;
     public void Reset()
     {

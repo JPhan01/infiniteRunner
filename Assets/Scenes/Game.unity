@@ -1322,7 +1322,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1344314377593938, guid: 9e03786a9517b604d8e930182607a128, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2085543695}
   m_SourcePrefab: {fileID: 100100000, guid: 9e03786a9517b604d8e930182607a128, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -6363,6 +6366,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3951aa277a345344fbc26d7485c61e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stormAdvancing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2085543695}
+        m_TargetAssemblyTypeName: StormController, Assembly-CSharp
+        m_MethodName: stormAdvanceOnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   distanceToLevel: 500
 --- !u!4 &1969193727
 Transform:
@@ -6485,6 +6503,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4684668656497045646, guid: 7caea3d3715b7d74eb035e760e3c3d36, type: 3}
   m_PrefabInstance: {fileID: 536236176}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2085543694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1344314377593938, guid: 9e03786a9517b604d8e930182607a128, type: 3}
+  m_PrefabInstance: {fileID: 818944956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2085543695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085543694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bd70c8c18545d429f832f58e3c7e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2787296119553483311
 PrefabInstance:
   m_ObjectHideFlags: 0
